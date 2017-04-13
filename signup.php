@@ -59,29 +59,48 @@ License: You must have a valid license purchased only from themeforest(the above
         <!-- BEGIN LOGIN -->
         <div class="content">
             <!-- BEGIN LOGIN FORM -->
-            <form class="login-form" action="index.html" method="post">
+
+            <form class="" action="Ctrl/signupCtrl.php" method="post">
               <h3 class="font-green">Sign Up</h3>
+              <?php
+                session_start();
+                if (isset($_SESSION["errors"])) {
+                    ?>
+                    <div class="alert alert-danger">
+                        <?php
+                        foreach ($_SESSION["errors"] as $key => $value) {
+                            ?>
+                            <strong>Error!</strong> <?php echo $value . "<br>"; ?>
+                            <?php
+                        }
+                        ?>
+                    </div>
+                    <?php
+                    unset($_SESSION["errors"]);
+                }
+                ?>
               <p class="hint"> Enter your personal details below: </p>
               <div class="form-group">
                   <label class="control-label visible-ie8 visible-ie9">Full Name</label>
-                  <input class="form-control placeholder-no-fix" type="text" placeholder="Full Name" name="fullname" /> </div>
+                  <input class="form-control placeholder-no-fix" type="text" placeholder="Full Name" name="fullname" required/> </div>
               <div class="form-group">
                   <!--ie8, ie9 does not support html5 placeholder, so we just show field title for that-->
                   <label class="control-label visible-ie8 visible-ie9">Email</label>
-                  <input class="form-control placeholder-no-fix" type="text" placeholder="Email" name="email" /> </div>
+                  <input class="form-control placeholder-no-fix" type="email" placeholder="Email" name="email" required/> </div>
               <div class="form-group">
                   <label class="control-label visible-ie8 visible-ie9">Password</label>
-                  <input class="form-control placeholder-no-fix" type="password" autocomplete="off" id="register_password" placeholder="Password" name="password" /> </div>
+                  <input class="form-control placeholder-no-fix" type="password" autocomplete="off" id="register_password" placeholder="Password" name="password"  required/> </div>
               <div class="form-group">
                   <label class="control-label visible-ie8 visible-ie9">Signup as</label>
-                  <select name="country" class="form-control">
-                      <option value="">Teacher</option>
-                      <option value="AF">Expert</option>
-                      <option value="AL">Student</option>
+                  <select name="role" class="form-control" required>
+                      <option value="">Select</option>
+                      <option value="2">Teacher</option>
+                      <option value="3">Expert</option>
+                      <option value="4">Student</option>
                   </select>
               </div>
               <div class="form-actions">
-                  <button type="submit" id="register-submit-btn" class="btn btn-success uppercase pull-right">Submit</button>
+                  <input class="btn btn-success uppercase pull-right" type="submit" name="Signup" value="Submit">
               </div>
             </form>
             <!-- END LOGIN FORM -->
