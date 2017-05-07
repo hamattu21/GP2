@@ -86,6 +86,13 @@
                                                             <span class="caption-subject font-green-sharp bold uppercase">Title : <?php echo $post[0]->title; ?></span>
                                                             <div class="media-body todo-comment">
                                                                 <p class="todo-text-color"><?php echo $post[0]->content; ?></p>
+                                                                <?php
+                                                                  if($post[0]->img != ''){
+                                                                    ?>
+                                                                      <img src="../img/<?php echo $post[0]->img  ?>" alt="">
+                                                                    <?php
+                                                                  }
+                                                                ?>
                                                             </div>
 
                                                         </div>

@@ -27,7 +27,7 @@ License: You must have a valid license purchased only from themeforest(the above
 <!--[if IE 8]> <html lang="en" class="ie8 no-js"> <![endif]-->
 <!--[if IE 9]> <html lang="en" class="ie9 no-js"> <![endif]-->
 <!--[if !IE]><!-->
-<html lang="en" dir="rtl">
+<html lang="en">
     <!--<![endif]-->
     <!-- BEGIN HEAD -->
 
@@ -45,8 +45,8 @@ License: You must have a valid license purchased only from themeforest(the above
         <link href="http://fonts.googleapis.com/css?family=Open+Sans:400,300,600,700&subset=all" rel="stylesheet" type="text/css" />
         <link href="../res/assets/global/plugins/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css" />
         <link href="../res/assets/global/plugins/simple-line-icons/simple-line-icons.min.css" rel="stylesheet" type="text/css" />
-        <link href="../res/assets/global/plugins/bootstrap/css/bootstrap-rtl.min.css" rel="stylesheet" type="text/css" />
-        <link href="../res/assets/global/plugins/bootstrap-switch/css/bootstrap-switch-rtl.min.css" rel="stylesheet" type="text/css" />
+        <link href="../res/assets/global/plugins/bootstrap/css/bootstrap.min.css" rel="stylesheet" type="text/css" />
+        <link href="../res/assets/global/plugins/bootstrap-switch/css/bootstrap-switch.min.css" rel="stylesheet" type="text/css" />
         <!-- END GLOBAL MANDATORY STYLES -->
         <!-- BEGIN PAGE LEVEL PLUGINS -->
         <link href="../res/assets/global/plugins/bootstrap-datepicker/css/bootstrap-datepicker3.min.css" rel="stylesheet" type="text/css" />
@@ -54,15 +54,15 @@ License: You must have a valid license purchased only from themeforest(the above
         <link href="../res/assets/global/plugins/select2/css/select2-bootstrap.min.css" rel="stylesheet" type="text/css" />
         <!-- END PAGE LEVEL PLUGINS -->
         <!-- BEGIN THEME GLOBAL STYLES -->
-        <link href="../res/assets/global/css/components-rtl.min.css" rel="stylesheet" id="style_components" type="text/css" />
-        <link href="../res/assets/global/css/plugins-rtl.min.css" rel="stylesheet" type="text/css" />
+        <link href="../res/assets/global/css/components.min.css" rel="stylesheet" id="style_components" type="text/css" />
+        <link href="../res/assets/global/css/plugins.min.css" rel="stylesheet" type="text/css" />
         <!-- END THEME GLOBAL STYLES -->
         <!-- BEGIN PAGE LEVEL STYLES -->
-        <link href="../res/assets/apps/css/todo-2-rtl.min.css" rel="stylesheet" type="text/css" />
+        <link href="../res/assets/apps/css/todo-2.min.css" rel="stylesheet" type="text/css" />
         <!-- END PAGE LEVEL STYLES -->
         <!-- BEGIN THEME LAYOUT STYLES -->
-        <link href="../res/assets/layouts/layout5/css/layout-rtl.min.css" rel="stylesheet" type="text/css" />
-        <link href="../res/assets/layouts/layout5/css/custom-rtl.min.css" rel="stylesheet" type="text/css" />
+        <link href="../res/assets/layouts/layout5/css/layout.min.css" rel="stylesheet" type="text/css" />
+        <link href="../res/assets/layouts/layout5/css/custom.min.css" rel="stylesheet" type="text/css" />
         <!-- END THEME LAYOUT STYLES -->
         <link rel="shortcut icon" href="favicon.ico" /> </head>
     <!-- END HEAD -->

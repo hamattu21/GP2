@@ -40,7 +40,7 @@
                                                                                         <div class="form-group">
                                                                                             <div class="col-md-12">
                                                                                                 <span class="help-block" id="VisaValidate"></span>
-                                                                                                <input class="form-control todo-taskbody-tasktitle" name="VisaNumber" id="VisaNumber" placeholder="Visa Number" type="text" max-length="16" min-length="16" required>
+                                                                                                <input class="form-control todo-taskbody-tasktitle" name="VisaNumber" id="VisaNumber" placeholder="Visa Number" type="text" minlength="16" maxlength="16" required>
                                                                                               </div>
                                                                                         </div>
                                                                                         <div class="form-group">

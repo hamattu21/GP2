@@ -26,7 +26,7 @@
                                                 </div>
                                             </div>
                                             <div class="portlet-body form">
-                                                <form method="post" action="Ctrl/NewPostCtrl.php"> 
+                                                <form method="post" action="Ctrl/NewPostCtrl.php" enctype="multipart/form-data">
                                                     <div class="form-body">
                                                         <div class="form-group">
                                                             <label>Title</label>
@@ -34,6 +34,10 @@
                                                         <div class="form-group">
                                                             <label>Content</label>
                                                             <textarea class="form-control" rows="20" name="content" required=""></textarea>
+                                                        </div>
+                                                        <div class="form-group">
+                                                            <label>Upload Image</label>
+                                                            <input type="file" name="image" />
                                                         </div>
                                                     </div>
                                                     <div class="form-actions">

@@ -16,6 +16,8 @@ if (isset($_POST['login'])) {
         $user[@count($user)] = mysqli_fetch_object($result);
         $_SESSION['id'] = $user[0]->id;
         $_SESSION['role'] = $user[0]->role;
+        $_SESSION['name'] = $user[0]->full_name;
+
         if($user[0]->role == 1){
           header("Location: ../Admin/index.php" , false);
         }

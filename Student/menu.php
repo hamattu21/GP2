@@ -45,7 +45,7 @@
                         </ul>
                     </li>
                     <li class="dropdown more-dropdown">
-                        <a href="javascript:;" class="text-uppercase"> My Account </a>
+                        <a href="javascript:;" class="text-uppercase"> My Account (Student : <?php echo $_SESSION['name']; ?>) </a>
                         <ul class="dropdown-menu">
                             <li>
                                 <a href="inbox.php">Inbox</a>

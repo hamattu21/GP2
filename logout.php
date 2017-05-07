@@ -3,7 +3,7 @@ session_start();
 $_SESSION['id'] = false;
 session_destroy();
 
-header("Location: login.php" , false);
+header("Location: index.php" , false);
 
 
  ?>

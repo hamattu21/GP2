@@ -30,26 +30,9 @@
                             </li>
                         </ul>
                     </li>
-                    <li class="dropdown dropdown-fw  ">
-                        <a href="javascript:;" class="text-uppercase">
-                            <i class="icon-puzzle"></i> Posts </a>
-                        <ul class="dropdown-menu dropdown-menu-fw">
-                            <li>
-                                <a href="Posts.php">
-                                    <i class="icon-bar-chart"></i> Posts </a>
-                            </li>
-                            <li>
-                                <a href="MyDeals.php">
-                                    <i class="icon-bar-chart"></i> My Deals </a>
-                            </li>
-                        </ul>
-                    </li>
                     <li class="dropdown more-dropdown">
-                        <a href="javascript:;" class="text-uppercase"> My Account (Expert : <?php echo $_SESSION['name']; ?>) </a>
+                        <a href="javascript:;" class="text-uppercase"> My Account (Admin : <?php echo $_SESSION['name']; ?>) </a>
                         <ul class="dropdown-menu">
-                            <li>
-                                <a href="inbox.php">Inbox</a>
-                            </li>
                             <li>
                                 <a href="../logout.php">Logout</a>
                             </li>

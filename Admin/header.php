@@ -2,7 +2,7 @@
 
 session_start();
 if(isset($_SESSION['id'])){
-  if($_SESSION['role'] != 2){
+  if($_SESSION['role'] != 1){
     header("Location: ../login.php" , false);
   }
 }else{

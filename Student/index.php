@@ -2,6 +2,7 @@
   include 'header.php';
   include '../db/db.php';
   session_start();
+
   $query = "SELECT COUNT(*) AS COUNT FROM POST P WHERE P.USER_ID = ".$_SESSION['id']." AND P.DEAL_ID != 0";
   $result = @mysqli_query($connection, $query);
   $count = mysqli_num_rows($result);
