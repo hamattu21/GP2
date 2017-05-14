@@ -19,6 +19,8 @@ if (isset($_POST['Payment'])) {
         $query = "UPDATE DEALS D SET D.STATUS = 1 WHERE D.ID = ".$deal_id;
         $result = @mysqli_query($connection, $query);
         if ($result) {
+            $query = "INSERT INTO `payment` (`id`, `post_id`, `deals_id`, `card_number`, `month`, `year`, `csv`) VALUES ('', '$post_id', '$deal_id', '$CardHolder', '$Month', '$Year', '$CSV');";
+            $result = @mysqli_query($connection, $query);
             $_SESSION["success"] = "Accept Deal Successfuly";
             header("Location:../MyPost.php", false);
         }

@@ -31,6 +31,27 @@
       }
   }
 
+
+  $query = "SELECT * FROM solution s where s.post_id = ".$id;
+  $result = @mysqli_query($connection, $query);
+  $count = mysqli_num_rows($result);
+  $solve = array();
+  if ($count > 0) {
+      for ($i = 0; $i < $count; $i++) {
+          $solve[@count($solve)] = mysqli_fetch_object($result);
+      }
+  }
+
+  $query = "SELECT * FROM rating r where r.post_id = ".$id;
+  $result = @mysqli_query($connection, $query);
+  $count = mysqli_num_rows($result);
+  $rating = array();
+  if ($count > 0) {
+      for ($i = 0; $i < $count; $i++) {
+          $rating[@count($rating)] = mysqli_fetch_object($result);
+      }
+  }
+
 ?>
         <!-- BEGIN CONTAINER -->
         <div class="wrapper">
@@ -136,6 +157,71 @@
                                                                                 </div>
 
                                                                             </div>
+                                                                        </div>
+                                                                        <?php
+                                                                      }
+                                                                    ?>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="portlet-body">
+                                                        <div class="row">
+                                                            <div class="col-md-12 col-sm-12">
+                                                                    <!-- TASK HEAD -->
+                                                                    <?php
+                                                                      if(@count($solve) > 0){
+                                                                        ?>
+                                                                        <div class="tabbable-line">
+                                                                            <ul class="nav nav-tabs ">
+                                                                                <li class="active">
+                                                                                    <a href="#tab_1" data-toggle="tab" aria-expanded="true"> Solution </a>
+                                                                                </li>
+
+                                                                            </ul>
+                                                                            <div class="tab-content">
+                                                                                <div class="tab-pane active" id="tab_1">
+                                                                                    <!-- TASK COMMENTS -->
+                                                                                    <div class="form-group">
+                                                                                        <div class="col-md-12">
+                                                                                            <ul class="media-list">
+                                                                                              <li class="media">
+                                                                                                  <div class="media-body todo-comment">
+                                                                                                      <h4><?php echo $solve[0]->solution; ?></h4>
+                                                                                                  </div>
+                                                                                              </li>
+                                                                                            </ul>
+                                                                                        </div>
+                                                                                    </div>
+                                                                                </div>
+
+                                                                            </div>
+                                                                            <?php
+                                                                              if(@count($rating) == 0){
+                                                                                ?>
+                                                                                <div class="tab-content">
+                                                                                    <div class="tab-pane active" id="tab_1">
+                                                                                        <!-- TASK COMMENTS -->
+                                                                                        <div class="form-group">
+                                                                                            <div class="col-md-12">
+                                                                                                <ul class="media-list">
+                                                                                                  <li class="media">
+                                                                                                      <div class="media-body todo-comment">
+                                                                                                          <h4>Rating :</h4>
+                                                                                                          <a href="Ctrl/NewRatingCtrl.php?post_id=<?php echo $id; ?>&rating=1"><p>1/5</p></a>
+                                                                                                          <a href="Ctrl/NewRatingCtrl.php?post_id=<?php echo $id; ?>&rating=2"><p>2/5</p></a>
+                                                                                                          <a href="Ctrl/NewRatingCtrl.php?post_id=<?php echo $id; ?>&rating=3"><p>3/5</p></a>
+                                                                                                          <a href="Ctrl/NewRatingCtrl.php?post_id=<?php echo $id; ?>&rating=4"><p>4/5</p></a>
+                                                                                                          <a href="Ctrl/NewRatingCtrl.php?post_id=<?php echo $id; ?>&rating=5"><p>5/5</p></a>
+                                                                                                      </div>
+                                                                                                  </li>
+                                                                                                </ul>
+                                                                                            </div>
+                                                                                        </div>
+                                                                                    </div>
+                                                                                </div>
+                                                                                <?php
+                                                                              }
+                                                                            ?>
                                                                         </div>
                                                                         <?php
                                                                       }
