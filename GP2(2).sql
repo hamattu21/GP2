@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: localhost
--- Generation Time: May 08, 2017 at 01:28 AM
+-- Generation Time: May 15, 2017 at 01:33 AM
 -- Server version: 10.1.19-MariaDB
 -- PHP Version: 5.6.28
 
@@ -35,6 +35,14 @@ CREATE TABLE `deals` (
   `comment` text NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
+--
+-- Dumping data for table `deals`
+--
+
+INSERT INTO `deals` (`id`, `post_id`, `user_id`, `amount`, `status`, `comment`) VALUES
+(2, 2, 3, 100, 1, 'test'),
+(3, 3, 3, 100, 1, 'test');
+
 -- --------------------------------------------------------
 
 --
@@ -65,6 +73,14 @@ CREATE TABLE `payment` (
   `csv` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
+--
+-- Dumping data for table `payment`
+--
+
+INSERT INTO `payment` (`id`, `post_id`, `deals_id`, `card_number`, `month`, `year`, `csv`) VALUES
+(2, 2, 0, 'mohammed', 12, 12, 123),
+(3, 3, 3, 'moha', 12, 12, 123);
+
 -- --------------------------------------------------------
 
 --
@@ -80,6 +96,14 @@ CREATE TABLE `post` (
   `deal_id` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
+--
+-- Dumping data for table `post`
+--
+
+INSERT INTO `post` (`id`, `title`, `content`, `img`, `user_id`, `deal_id`) VALUES
+(2, 'test', 'test', 'image1.PNG', 1, 2),
+(3, 'test1', 'test', '', 1, 3);
+
 -- --------------------------------------------------------
 
 --
@@ -90,8 +114,16 @@ CREATE TABLE `rating` (
   `id` int(11) NOT NULL,
   `voter` int(11) NOT NULL,
   `for` int(11) NOT NULL,
-  `rating` int(11) NOT NULL
+  `rating` int(11) NOT NULL,
+  `post_id` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+--
+-- Dumping data for table `rating`
+--
+
+INSERT INTO `rating` (`id`, `voter`, `for`, `rating`, `post_id`) VALUES
+(8, 1, 3, 5, 3);
 
 -- --------------------------------------------------------
 
@@ -118,6 +150,13 @@ CREATE TABLE `solution` (
   `post_id` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
+--
+-- Dumping data for table `solution`
+--
+
+INSERT INTO `solution` (`id`, `solution`, `post_id`) VALUES
+(2, 'test', 3);
+
 -- --------------------------------------------------------
 
 --
@@ -131,6 +170,15 @@ CREATE TABLE `user` (
   `password` varchar(200) NOT NULL,
   `role` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+--
+-- Dumping data for table `user`
+--
+
+INSERT INTO `user` (`id`, `full_name`, `email`, `password`, `role`) VALUES
+(1, 'mohammed', 'hamattu21@gmail.com', 'e10adc3949ba59abbe56e057f20f883e', 4),
+(2, 'khaled', 'hamattu211@gmail.com', 'e10adc3949ba59abbe56e057f20f883e', 2),
+(3, 'mmmmm', 'asd@asd.com', 'e10adc3949ba59abbe56e057f20f883e', 3);
 
 --
 -- Indexes for dumped tables
@@ -192,17 +240,17 @@ ALTER TABLE `user`
 -- AUTO_INCREMENT for table `deals`
 --
 ALTER TABLE `deals`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 --
 -- AUTO_INCREMENT for table `inbox`
 --
 ALTER TABLE `inbox`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
 --
 -- AUTO_INCREMENT for table `payment`
 --
 ALTER TABLE `payment`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 --
 -- AUTO_INCREMENT for table `post`
 --
@@ -212,17 +260,17 @@ ALTER TABLE `post`
 -- AUTO_INCREMENT for table `rating`
 --
 ALTER TABLE `rating`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
 --
 -- AUTO_INCREMENT for table `replay`
 --
 ALTER TABLE `replay`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
 --
 -- AUTO_INCREMENT for table `solution`
 --
 ALTER TABLE `solution`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 --
 -- AUTO_INCREMENT for table `user`
 --
@@ -238,13 +286,6 @@ ALTER TABLE `user`
 ALTER TABLE `payment`
   ADD CONSTRAINT `payment_ibfk_1` FOREIGN KEY (`id`) REFERENCES `post` (`id`) ON DELETE CASCADE,
   ADD CONSTRAINT `payment_ibfk_2` FOREIGN KEY (`id`) REFERENCES `deals` (`id`) ON DELETE CASCADE;
-
---
--- Constraints for table `rating`
---
-ALTER TABLE `rating`
-  ADD CONSTRAINT `rating_ibfk_1` FOREIGN KEY (`id`) REFERENCES `user` (`id`) ON DELETE CASCADE,
-  ADD CONSTRAINT `rating_ibfk_2` FOREIGN KEY (`id`) REFERENCES `user` (`id`) ON DELETE CASCADE;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
